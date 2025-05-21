@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">study-companion-plus</string>
+    <string name="title_activity_main">study-companion-plus</string>
+    <string name="package_name">com.aman.study</string>
+    <string name="custom_url_scheme">com.aman.study</string>
+</resources>
