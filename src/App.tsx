@@ -61,7 +61,7 @@ function App() {
   const [showNoteEditor, setShowNoteEditor] = useState(false);
   
   // Session logs
-  const [sessionLogs, setSessionLogs] = useLocalStorage<SessionLog[]>('studyCompanion_sessionLogs', []);
+  const [sessionLogs] = useLocalStorage<SessionLog[]>('studyCompanion_sessionLogs', []);
 
   // Subject handlers
   const handleAddSubject = () => {
@@ -160,7 +160,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+<div className="min-h-screen bg-black flex flex-col text-white">
       <Header activeTab={activeTab} setActiveTab={setActiveTab} />
       
       <main className="flex-1 container mx-auto px-4 py-6 md:py-8">

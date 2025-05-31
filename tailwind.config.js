@@ -15,7 +15,7 @@ export default {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.slate.700'),
+            color: theme('colors.slate.300'),
             maxWidth: '100%',
           },
         },
@@ -23,4 +23,5 @@ export default {
     },
   },
   plugins: [],
+  darkMode: 'class',
 };

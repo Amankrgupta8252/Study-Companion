@@ -45,7 +45,16 @@ const ProgressChart: React.FC<ProgressChartProps> = ({ subjects, sessionLogs }) 
   }));
   
   // Custom tooltip for bar chart
-  const CustomTooltip = ({ active, payload }: any) => {
+  const CustomTooltip = ({
+    active,
+    payload,
+  }: {
+    active?: boolean;
+    payload?: Array<{
+      value: number;
+      payload: { name: string };
+    }>;
+  }) => {
     if (active && payload && payload.length) {
       return (
         <div className="bg-white p-3 shadow-md rounded-lg border border-gray-200">
