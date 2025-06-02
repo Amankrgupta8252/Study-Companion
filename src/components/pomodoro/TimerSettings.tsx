@@ -58,7 +58,7 @@ const TimerSettings: React.FC<TimerSettingsProps> = ({
                 max="120"
                 value={localSettings.workMinutes}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-full px-3 py-2 bg-black border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               />
             </div>
             
@@ -74,7 +74,7 @@ const TimerSettings: React.FC<TimerSettingsProps> = ({
                 max="30"
                 value={localSettings.breakMinutes}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-full px-3 py-2 bg-black border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               />
             </div>
             
@@ -90,7 +90,7 @@ const TimerSettings: React.FC<TimerSettingsProps> = ({
                 max="60"
                 value={localSettings.longBreakMinutes}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-full px-3 py-2 bg-black border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               />
             </div>
             
@@ -106,7 +106,7 @@ const TimerSettings: React.FC<TimerSettingsProps> = ({
                 max="10"
                 value={localSettings.sessionsBeforeLongBreak}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-full px-3 py-2 bg-black border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               />
             </div>
           </div>
