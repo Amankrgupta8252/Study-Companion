@@ -54,8 +54,7 @@ const NoteList: React.FC<NoteListProps> = ({
   return (
     <div className="w-full">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl font-semibold text-slate-800">Study Notes</h2>
-        <button
+<h2 className="text-xl font-semibold text-white">Study Notes</h2>        <button
           onClick={onAddNote}
           className="flex items-center px-3 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
         >

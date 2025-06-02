@@ -101,7 +101,7 @@ const SubjectForm: React.FC<SubjectFormProps> = ({
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-full px-3 py-2 bg-black border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                 placeholder="e.g., Mathematics"
                 maxLength={30}
               />
@@ -137,7 +137,7 @@ const SubjectForm: React.FC<SubjectFormProps> = ({
                 value={goalMinutes}
                 onChange={(e) => setGoalMinutes(Math.max(1, parseInt(e.target.value, 10) || 0))}
                 min="1"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-full px-3 py-2 bg-black border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               />
             </div>
           </div>

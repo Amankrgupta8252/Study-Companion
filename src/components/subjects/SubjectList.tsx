@@ -2,6 +2,7 @@ import React from 'react';
 import { Plus, Edit, Trash2 } from 'lucide-react';
 import { Subject } from '../../types';
 
+
 interface SubjectListProps {
   subjects: Subject[];
   onAddSubject: () => void;

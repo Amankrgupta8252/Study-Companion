@@ -85,53 +85,47 @@ const useTimer = ({ subjects, updateSubjectTime }: UseTimerProps) => {
 
   // Skip to next timer (work -> break or break -> work)
   const skipToNext = () => {
-    const { mode, sessionsCompleted } = timerState;
-    
-    // Log completed session if we're in work mode
-    if (mode === 'work' && timerState.currentSubjectId) {
-      // Calculate minutes completed (total - remaining)
-      const minutesCompleted = (settings.workMinutes * 60 - timerState.secondsLeft) / 60;
-      
-      if (minutesCompleted > 0) {
-        // Update subject stats
-        updateSubjectTime(timerState.currentSubjectId, minutesCompleted);
-        
-        // Log session
-        const newLog: SessionLog = {
-          id: uuidv4(),
-          subjectId: timerState.currentSubjectId,
-          date: new Date().toISOString(),
-          duration: minutesCompleted,
-          type: 'work',
-        };
-        
-        setSessionLogs(prev => [...prev, newLog]);
-      }
+  const { mode, sessionsCompleted } = timerState;
+
+  if (mode === 'work' && timerState.currentSubjectId) {
+    const minutesCompleted = (settings.workMinutes * 60 - timerState.secondsLeft) / 60;
+
+    if (minutesCompleted > 0) {
+      updateSubjectTime(timerState.currentSubjectId, minutesCompleted);
+
+      const newLog: SessionLog = {
+        id: uuidv4(),
+        subjectId: timerState.currentSubjectId,
+        date: new Date().toISOString(),
+        duration: minutesCompleted,
+        type: 'work',
+      };
+
+      setSessionLogs(prev => [...prev, newLog]);
     }
-    
-    // Determine next mode
-    if (mode === 'work') {
-      // After work session, increment completed sessions
-      const newSessionsCompleted = sessionsCompleted + 1;
-      const needsLongBreak = newSessionsCompleted % settings.sessionsBeforeLongBreak === 0;
-      
-      setTimerState(prev => ({
-        ...prev,
-        mode: needsLongBreak ? 'longBreak' : 'break',
-        secondsLeft: needsLongBreak ? settings.longBreakMinutes * 60 : settings.breakMinutes * 60,
-        sessionsCompleted: newSessionsCompleted,
-        isPaused: true,
-      }));
-    } else {
-      // After any break, go back to work
-      setTimerState(prev => ({
-        ...prev,
-        mode: 'work',
-        secondsLeft: settings.workMinutes * 60,
-        isPaused: true,
-      }));
-    }
-  };
+  }
+
+  if (mode === 'work') {
+    const newSessionsCompleted = sessionsCompleted + 1;
+    const needsLongBreak = newSessionsCompleted % settings.sessionsBeforeLongBreak === 0;
+
+    setTimerState(prev => ({
+      ...prev,
+      mode: needsLongBreak ? 'longBreak' : 'break',
+      secondsLeft: needsLongBreak ? settings.longBreakMinutes * 60 : settings.breakMinutes * 60,
+      sessionsCompleted: newSessionsCompleted,
+      isPaused: false,  // <---- Change here from true to false
+    }));
+  } else {
+    setTimerState(prev => ({
+      ...prev,
+      mode: 'work',
+      secondsLeft: settings.workMinutes * 60,
+      isPaused: false,  // <---- Change here from true to false
+    }));
+  }
+};
+
 
   // Timer effect
   useEffect(() => {

@@ -5,6 +5,7 @@ import useTimer from '../../hooks/useTimer';
 import { initAudio } from '../../services/notificationService';
 import TimerSettings from './TimerSettings';
 
+
 interface TimerProps {
   subjects: Subject[];
   updateSubjectTime: (subjectId: string, minutesCompleted: number) => void;

@@ -86,7 +86,7 @@ const TaskList: React.FC<TaskListProps> = ({
               id="taskTitle"
               value={newTaskTitle}
               onChange={(e) => setNewTaskTitle(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="w-full px-3 py-2 bg-black border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               placeholder="e.g., Complete chapter 5 exercises"
               maxLength={100}
             />
@@ -100,7 +100,7 @@ const TaskList: React.FC<TaskListProps> = ({
               id="taskSubject"
               value={newTaskSubjectId}
               onChange={(e) => setNewTaskSubjectId(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="w-full px-3 py-2 bg-black border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
             >
               <option value="">Select a subject</option>
               {subjects.map((subject) => (
@@ -142,7 +142,7 @@ const TaskList: React.FC<TaskListProps> = ({
                       type="text"
                       value={editingTask.title}
                       onChange={(e) => setEditingTask({ ...editingTask, title: e.target.value })}
-                      className="flex-1 px-2 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                      className="flex-1 px-2 py-1 bg-black border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                       autoFocus
                     />
                     <button

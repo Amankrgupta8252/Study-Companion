@@ -109,7 +109,7 @@ const NoteEditor: React.FC<NoteEditorProps> = ({
                 id="title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-full px-3 py-2 bg-black border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                 placeholder="e.g., Chapter 5 Summary"
                 disabled={isPreview}
               />
@@ -123,7 +123,7 @@ const NoteEditor: React.FC<NoteEditorProps> = ({
                 id="subject"
                 value={subjectId}
                 onChange={(e) => setSubjectId(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="w-full px-3 py-2 bg-black border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                 disabled={isPreview}
               >
                 <option value="">Select a subject</option>
@@ -150,7 +150,7 @@ const NoteEditor: React.FC<NoteEditorProps> = ({
               <textarea
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                className="flex-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 font-mono text-sm resize-none"
+                className="flex-1 w-full px-3 py-2 bg-black border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 font-mono text-sm resize-none"
                 placeholder="# Markdown formatting supported
 - You can create lists
 - **Bold text** and *italic text*

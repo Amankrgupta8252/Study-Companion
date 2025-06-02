@@ -4,6 +4,7 @@ export interface Subject {
   color: string;
   goalMinutes: number;
   completedMinutes: number;
+  sessionLogs?: number[]; // ← New: session durations
 }
 
 export interface Task {
